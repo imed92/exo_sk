@@ -1,0 +1,51 @@
+{
+  "name": "cinetime",
+  "version": "1.0.0",
+  "main": "main.js",
+  "build": {
+    "appId": "com.cinetime.app",
+    "productName": "CineTime",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "frontend/build/**/*",
+      "main.js",
+      "assets/**/*"
+    ],
+    "icon": "assets/icon.png",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.png"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "build-react": "cd frontend && npm install && npm run build",
+    "dist": "npm run build-react && electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^26.6.10",
+    "electron-builder": "^24.13.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wassb92/electron-react-ts-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wassb92/electron-react-ts-app/issues"
+  },
+  "homepage": "https://github.com/wassb92/electron-react-ts-app#readme",
+  "description": ""
+}

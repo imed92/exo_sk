@@ -1,0 +1,75 @@
+/* Conteneur principal avec la vidéo de fond */
+.home-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Vidéo de fond qui occupe tout l'écran */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* Mettre la vidéo derrière le contenu */
+  object-fit: cover; /* Pour couvrir tout l'écran */
+  filter: brightness(50%); /* Assombrir la vidéo pour mieux voir le texte */
+}
+
+/* Contenu de la page d'accueil */
+.home-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.home-title {
+  font-size: 48px;
+  color: white;
+  font-weight: 700;
+}
+
+.home-description {
+  font-size: 20px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.register-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.register-button:hover {
+  background-color: #218838;
+}
