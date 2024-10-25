@@ -1,0 +1,25 @@
+name: Pipeline de test
+
+# Ici je définis les trigger
+on:
+  push:
+    branches:
+    -main
+  
+jobs:
+  build-and-packages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout vers la bonne branche
+        uses: actions/checkout@v4 # je me localise dans la branche qui a été trigger
+      - name: Affiche bonjour # nom de la commande
+        run: echo "bonjour" # la commande
+      - name: Setup nodejs
+        uses: actions/setup-node@v4 # ici grace a github actions j'installe node
+        with:
+          node-version: 18 # la version de node qu'on veut
+      - name: Install dependencies
+        run: npm install
+      - name: Lance le frontend en React
+        run: cd frontend && npm install && npm start
